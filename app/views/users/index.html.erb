@@ -1,0 +1,13 @@
+<%= form_tag users_path, method: 'post' do%>
+  <%= label_tag 'nom' %>
+  <%= text_field_tag 'name', "", class: 'form-control'  %>
+  <%= label_tag 'email' %>
+  <%= text_field_tag 'email', "", class: 'form-control'  %>
+  <%= submit_tag "S'inscrire", class: "btn btn-primary" %>
+<% end %>
+
+<% User.all.each do |user|%>
+<%= user.name%>
+<%=user.email%>
+<br><br>
+<% end %>
